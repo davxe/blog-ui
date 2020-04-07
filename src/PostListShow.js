@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 class ShowListPost extends React.Component
 {
@@ -45,7 +45,9 @@ class ShowListPost extends React.Component
     }
 
     render() {
-        
+        console.log('user',this.state.users)
+        console.log('post',this.state.posts)
+        console.log('comments',this.state.comments)
         return (
             <div> 
                 <h2>USER NAME:- {this.state.users.name}</h2>
@@ -68,6 +70,7 @@ class ShowListPost extends React.Component
                         })
                     }
                 </ul><hr/>
+                <p><Link to={`/users/${this.state.users.id}`}>More Posts from author:{this.state.users.name}</Link></p>
             </div> 
         )
     }
